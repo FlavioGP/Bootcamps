@@ -19,3 +19,4 @@ Nesse projeto você terá o desafio de reconstruir a página de login do Instagr
 
 
 - Apesar do desafio pedir apenas CSS tomei liberdade de utilizar JS para fazer a animação das imagens.
+- clique [aqui](https://flaviogp.github.io/Bootcamps/tree/main/clone-instagram) para acessar a página;
