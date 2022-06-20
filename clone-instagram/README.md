@@ -8,13 +8,13 @@ Nesse projeto você terá o desafio de reconstruir a página de login do Instagr
 
 ### :desktop_computer: Desktop:
 
-![image-desktop](C:\Users\Flavio Gomes\Desktop\BootCamps\clone-instagram\readme\ezgif.com-gif-maker.gif)
+![image-desktop](.\readme\ezgif.com-gif-maker.gif)
 
 
 
 ### 📱 mobile:
 
-![image-mobile](C:\Users\Flavio Gomes\Desktop\BootCamps\clone-instagram\readme\mobile.jpeg)
+![image-mobile](.\readme\mobile.jpeg)
 
 
 
