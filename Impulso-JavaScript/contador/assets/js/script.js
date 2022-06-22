@@ -20,26 +20,19 @@ class Contador{
 
     score(el, span){
 
-        if(el.classList.contains('increment')){
-            console.log(span); 
-            span.innerHTML++;
-        };
-        if(el.classList.contains('decrement')){
-            console.log(span); 
-             span.innerHTML--;
-            };
+        if(el.classList.contains('increment')) span.innerHTML++;
+        if(el.classList.contains('decrement')) span.innerHTML--;
+
     }
 
     checkInput(span){
         const check = document.querySelector('.check');
         const checkBoxes =  check.querySelectorAll('input[type="checkbox"]');
-            
 
             for(let input of checkBoxes){
+
                 if(input.classList.contains('negative-number') && !input.checked){  
-                    if (span.innerText <= 0) {
-                        span.innerText = 0;
-                    };
+                    if (span.innerText <= 0) span.innerText = 0;
                 };
 
                 if(input.classList.contains('change-color') && input.checked){  
@@ -47,6 +40,7 @@ class Contador{
                     if(span.innerText > 0) span.style.color = 'green';
                     if(span.innerText < 0) span.style.color = 'red';
                 }   
+                
             }
     }
 
