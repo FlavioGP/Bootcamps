@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --background: rgb(139, 115, 250);
+    --ligth: #fff;
+}
+
+html{
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: var(--background);
+}
+
+.contador{
+    max-width: 120rem;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: var(--ligth);
+}
+
+h1{
+    font-size: 5rem;
+}
+
+.contador p{
+    margin: 4rem 0; 
+}
+
+p, span{
+    font-size: 2rem;
+}
+
+.display button{
+    font-size: 2.5rem;
+    width: 4rem;
+    height: 4rem;
+    border: none;
+    border-radius: 50%;
+    margin: 2rem;
+    background-color: var(--background);
+}
+.check {
+    list-style: none;
+    font-weight: normal;
+    margin-top: 2rem;
+    text-align: left;
+    line-height: 2rem;
+
+}
+
+.check input[type="checkbox"]{
+    margin-right: 1rem;
+}
+
+.check label{
+    font-size: 1.6rem;
+}
