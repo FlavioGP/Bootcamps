@@ -36,11 +36,12 @@ class Contador{
                 };
 
                 if(input.classList.contains('change-color') && input.checked){  
-                    if(span.innerText == 0) span.style.color = 'black';
                     if(span.innerText > 0) span.style.color = 'green';
                     if(span.innerText < 0) span.style.color = 'red';
-                }   
-                
+                }else{
+                    span.style.color = 'black'
+                }
+
             }
     }
 
