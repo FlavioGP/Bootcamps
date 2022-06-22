@@ -39,7 +39,7 @@ class Contador{
                     if(span.innerText > 0) span.style.color = 'green';
                     if(span.innerText < 0) span.style.color = 'red';
                 }else{
-                    span.style.color = 'black'
+                    span.style.color = 'black';
                 }
 
             }
