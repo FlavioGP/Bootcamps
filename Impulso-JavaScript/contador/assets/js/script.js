@@ -15,12 +15,10 @@ class Contador{
             const span = this.contador.querySelector('.number');
             const el = e.target;
             this.score(el, span);
-            console.log(this.display);
         });
     }
 
     score(el, span){
-
         if(el.classList.contains('increment')){ 
             this.display++;
         }
