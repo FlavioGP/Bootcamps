@@ -1,5 +1,7 @@
 # Sintaxe e Operadores
 
+Clique [aqui](https://flaviogp.github.io/bootcamps/Impulso-JavaScript/Sintaxe-e-operadores/) para visualizar o projeto.
+
 ## Atividade
 
 - Crie uma função que recebe dois números como parâmetros.
