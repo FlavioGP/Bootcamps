@@ -180,8 +180,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
   </div>
 </div>*/
 //-------------------------------------------------
-require('dotenv').config();
-var apiKey = '3f301be7381a03ad8d352314dcc3ec1d';
+// var apiKey = '3f301be7381a03ad8d352314dcc3ec1d';
 let apiKey;
 let requestToken;
 let username;
@@ -205,10 +204,12 @@ searchButton.addEventListener('click', () => __awaiter(void 0, void 0, void 0, f
     let listaDeFilmes = yield procurarFilme(query);
     let ul = document.createElement('ul');
     ul.id = "lista";
-    for (const item of listaDeFilmes.results) {
-        let li = document.createElement('li');
-        li.appendChild(document.createTextNode(item.original_title));
-        ul.appendChild(li);
+    if (listaDeFilmes instanceof procurarFilme) {
+        for (const item of listaDeFilmes.results) {
+            let li = document.createElement('li');
+            li.appendChild(document.createTextNode(item.original_title));
+            ul.appendChild(li);
+        }
     }
     console.log(listaDeFilmes);
     searchContainer.appendChild(ul);
@@ -269,11 +270,11 @@ function procurarFilme(query) {
     return __awaiter(this, void 0, void 0, function* () {
         query = encodeURI(query);
         console.log(query);
-        let result = yield HttpClient.get({
+        let results = yield HttpClient.get({
             url: `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${query}`,
             method: "GET"
         });
-        return result;
+        return results;
     });
 }
 function adicionarFilme(filmeId) {
@@ -291,13 +292,15 @@ function criarRequestToken() {
             url: `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
             method: "GET"
         });
-        requestToken = result.request_token;
+        if (result instanceof HttpClient)
+            requestToken = result.request_token;
     });
 }
 function logar() {
     return __awaiter(this, void 0, void 0, function* () {
         yield HttpClient.get({
-            url: `https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=${apiKey}`,
+            // url: `https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=${apiKey}`,
+            url: `https://api.themoviedb.org/3/authentication/token/new?api_key=${apiKey}`,
             method: "POST",
             body: {
                 username: `${username}`,
@@ -310,10 +313,12 @@ function logar() {
 function criarSessao() {
     return __awaiter(this, void 0, void 0, function* () {
         let result = yield HttpClient.get({
-            url: `https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}&request_token=${requestToken}`,
+            // url: `https://api.themoviedb.org/3/authentication/session/new?api_key=${apiKey}&request_token=${requestToken}`,
+            url: `https://www.themoviedb.org/authenticate/${requestToken}`,
             method: "GET"
         });
-        sessionId = result.session_id;
+        if (result instanceof HttpClient)
+            sessionId = result.session_id;
     });
 }
 function criarLista(nomeDaLista, descricao) {
