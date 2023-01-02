@@ -25,3 +25,13 @@ Preste bem atenção às instruções dentro do arquivo App.jsx e bora codar!
 - Mostre uma mensagem de erro de login() caso o Login falhe. A mensagem deve ser limpa a cada nova tentativa de Login.
 
 - Mostre um alerta caso o login seja efetuado com sucesso (javascript alert). Investigue a função login() para entender como ter sucesso na requisição.
+
+
+
+### Formulario inicial
+![initial form](https://github.com/FlavioGP/assets-redme/blob/main/assets-react-login-form/initial.jpg)
+
+### Resolução
+
+![login error](https://github.com/FlavioGP/assets-redme/blob/main/assets-react-login-form/error.jpg)
+![login success](https://github.com/FlavioGP/assets-redme/blob/main/assets-react-login-form/success.jpg)
