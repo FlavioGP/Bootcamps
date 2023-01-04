@@ -96,9 +96,3 @@ input:focus {
   border-radius: 6px;
   text-align: center;
 }
-
-
-button.active{
-  background-color: #4169e1;
-  color: #fff;
-}

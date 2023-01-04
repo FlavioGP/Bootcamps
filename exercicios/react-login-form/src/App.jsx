@@ -6,15 +6,10 @@ export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
-  // const [loading, setLoading] = useState('');
   const [active, setActive] = useState(false);
 
-  const chekForm = () => {
-    if(!email){ 
-      setActive(false);
-      return;
-    };
-    if(!password || password.length < 5){ 
+  const chekActiveButton = () => {
+    if(!email || password.length < 6){ 
       setActive(false);
       return;
     };
@@ -25,9 +20,6 @@ export default function LoginForm() {
     setPassword('')
   }
   const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if(!active) return;
 
     const user = {
       email,
@@ -48,10 +40,9 @@ export default function LoginForm() {
   }
 
   return (
-    <div className='wrapper' onChange={chekForm}>
+    <div className='wrapper' onChange={chekActiveButton}>
       <div className='login-form'>
         <h1>Login Form</h1>
-        {/* Coloque a mensagem de erro de login na div abaixo. Mostre a div somente se houver uma mensagem de erro. */}
         { errorMessage && <div className='errorMessage'>{errorMessage}</div>}
         <div className='row'>
           <label htmlFor={'email'}>Email:</label>
@@ -75,7 +66,7 @@ export default function LoginForm() {
 
         <div className='button'>
           <button 
-          className={active ? 'active': ''}
+          disabled={active ? false : true}
           onClick={e => handleSubmit(e)}
           >Login</button>
         </div>
@@ -83,3 +74,4 @@ export default function LoginForm() {
     </div>
   );
 }
+
